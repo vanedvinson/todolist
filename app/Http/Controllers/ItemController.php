@@ -44,8 +44,6 @@ class ItemController extends Controller
 
         error_log("item ". $newItem->name . " created.");
         $newItem->save();
-
-
     }
 
     /**
@@ -100,12 +98,13 @@ class ItemController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * @param int $id
      * @param  \App\Models\item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(item $item)
+    public function destroy($item)
     {
-        $item->delete();
+        $existingItem = item::find($item);
+        $existingItem->delete();
     }
 }

@@ -26,8 +26,9 @@ export default {
             console.log("starting axios post");
             axios.post(`http://localhost:8000/api/item/store`, this.item)
                 .then(Response => {
-                    if(Response.status == 201){
+                    if(Response.status == 200 || Response.status == 201){
                         this.item.name = "";
+                        this.$emit('reloadlist')
                     }
                 })
                 .catch(error => {

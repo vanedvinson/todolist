@@ -1,7 +1,6 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import Komponenta from './vue/Komponenta.vue'
 import App from './vue/app.vue'
 
 import VueRouter from 'vue-router';

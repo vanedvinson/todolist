@@ -2,7 +2,8 @@
     <div class="todoListContainer">
         <div class="heading">
             <h2 id="title">Todo List</h2>
-            <app-itemform/>
+            <app-itemform
+            v-on:reloadlist="getList()"/>
         </div>
 
         <list-view
@@ -34,6 +35,7 @@ export default {
                 .catch(error => {
                     console.log(error);
                 })
+
         }
     },
     created() {
