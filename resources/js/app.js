@@ -7,6 +7,15 @@ import VueRouter from 'vue-router';
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 
+//localization
+import {Lang} from 'laravel-vue-lang';
+
+Vue.use(Lang, {
+    locale: 'nn',
+    fallback: 'en',
+
+});
+
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
 

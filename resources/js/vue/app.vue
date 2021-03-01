@@ -1,7 +1,7 @@
 <template>
     <div class="todoListContainer">
         <div class="heading">
-            <h2 id="title">Todo List</h2>
+            <h2 id="title">{{__('T1')}}</h2>
             <app-itemform
             v-on:reloadlist="getList()"/>
         </div>
@@ -13,8 +13,10 @@
 </template>
 
 <script>
-import AppItemform from './appItemform.vue'
-import ListView from './listView.vue'
+
+import AppItemform from './appItemForm.vue';
+import ListView from './listView.vue';
+
 
 export default {
     data: function(){
@@ -40,6 +42,7 @@ export default {
     },
     created() {
         this.getList();
+        console.log(this.__('T1'));
     }
 }
 </script>
